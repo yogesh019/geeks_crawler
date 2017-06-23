@@ -19,4 +19,6 @@ from crawler import views as crawler_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$',crawler_views.home,name='home'),
+    url(r'^list/$',crawler_views.getListOfArticles,name='list'),
+    url(r'^combine/$',crawler_views.combineContent,name='combine'),
 ]
