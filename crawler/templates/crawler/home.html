@@ -1,0 +1,227 @@
+{% load staticfiles %}
+<html>
+	<head>
+        <title> GeeksCrawler</title>
+        <link href="{% static 'crawler/img/gfg.png' %}" rel="shortcut icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <link href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+        <script src="{% static 'crawler/js/crawlgfg.js' %}"></script>
+    	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <style>
+                    
+           header{
+              box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgb(0,0,0);
+              position: fixed;
+              text-align:center;
+              top: 0;
+              width: 90%;
+              z-index: 10005;
+              color:black;
+           }  
+           select{
+               display:block;
+
+    			border: 2px solid #795548;
+           }
+
+           body{
+           	background-image: url("{% static 'crawler/img/bg.jpg' %}");
+           	  // background-color: #588c7e;
+           }
+                    
+                     
+			footer {
+					height: 35px;
+					width:95%;
+					position:fixed;
+					bottom:0;
+					left:0;
+					text-align: center;
+					margin-left: 2.5%;
+					color:black;
+			}
+                			
+            .fa-heart{
+					color:red;
+			}
+				
+           #btn{
+           	margin-left: 45%
+           }
+           @media screen and (max-width: 720px){
+
+
+           	main{
+           		padding:1px;
+           		margin-top:80px;	
+           	}
+           	#btn{
+           		margin-left: 35%
+ 			}
+   
+         }
+
+        </style>
+    
+    </head>
+    
+    <body style="width: 90%; margin: auto;">
+    	<header>
+        	<h4>Geeks For Geeks Crawler !</h4>
+        </header>
+                            
+        <main>
+    		<div id="first" class="input-field col s10 l6 m8 offset-s1 offset-l3 offset-m2" style="width: 60%;margin: auto;margin-top: 10%">
+        		<select id="company-name">
+		            <option value="0" disabled selected>Select Company</option>
+		            <option value="1">247-Innovation Lab</option>
+		            <option value="2">Accenture</option>
+		            <option value="3">Accolite</option>
+		            <option value="4">Adobe</option>
+		            <option value="5">Amazon</option>
+		            <option value="6">Amdocs</option>
+		            <option value="7">Aricent</option>
+		            <option value="8">BankBazaar-com-2</option>
+		            <option value="9">Belzabar</option>
+		            <option value="10">Boomerang</option>
+		            <option value="11">Brocade</option>
+		            <option value="12">BrowserStack</option>
+		            <option value="13">Cadence</option>
+		            <option value="14">CarWale</option>
+		            <option value="15">Cisco</option>
+		            <option value="16">Citicorp</option>
+		            <option value="17">Citrix</option>
+		            <option value="18">Codenation</option>
+		            <option value="19">Cognizant</option>
+		            <option value="20">CouponDunia</option>
+		            <option value="21">D-E-Shaw</option>
+		            <option value="22">Dell</option>
+		            <option value="23">Directi</option>
+		            <option value="24">Drishti-Soft-Solutions</option>
+		            <option value="25">eBay</option>
+		            <option value="26">Epic-systems</option>
+		            <option value="27">Expedia</option>
+		            <option value="28">Fab</option>
+		            <option value="29">Facebook</option>
+		            <option value="30">FactSet</option>
+		            <option value="31">Flipkart</option>
+		            <option value="32">FreeCharge</option>
+		            <option value="33">GE</option>
+		            <option value="34">Goldman-Sachs</option>
+		            <option value="35">Google</option>
+		            <option value="36">GreyOrange</option>
+		            <option value="37">Grofers</option>
+		            <option value="38">Groupon</option>
+		            <option value="39">HCL</option>
+		            <option value="40">HSBC</option>
+		            <option value="41">Hike</option>
+		            <option value="42">Housing-com</option>
+		            <option value="43">Huawei</option>
+		            <option value="44">HunanAsset</option>
+		            <option value="45">IBM</option>
+		            <option value="46">IgniteWorld</option>
+		            <option value="47">Infinera</option>
+		            <option value="48">InfoEdge</option>
+		            <option value="49">Informatica</option>
+		            <option value="50">Infosys</option>
+		            <option value="51">Inmobi</option>
+		            <option value="52">Inmobi</option>
+		            <option value="53">Intel</option>
+		            <option value="54">Intuit</option>
+		            <option value="55">Juniper-Networks</option>
+		            <option value="56">Knowlarity</option>
+		            <option value="57">Kritikal-Solutions</option>
+		            <option value="58">Kuliza</option>
+		            <option value="59">Linkedin</option>
+		            <option value="60">Lybrate</option>
+		            <option value="61">MAQ-Software</option>
+		            <option value="62">Mahindra-Comviva</option>
+		            <option value="63">MakeMyTrip</option>
+		            <option value="64">Medlife</option>
+		            <option value="65">MetLife</option>
+		            <option value="66">Microsoft</option>
+		            <option value="67">MindFire-Solutions</option>
+		            <option value="68">Monotype-Solutions</option>
+		            <option value="69">Moonfrog-Labs</option>
+		            <option value="70">Morgan-Stanley</option>
+		            <option value="71">Motlay</option>
+		            <option value="72">Myntra</option>
+		            <option value="73">Nagarro</option>
+		            <option value="74">Nearbuy</option>
+		            <option value="75">Netskope</option>
+		            <option value="76">Numerify</option>
+		            <option value="77">Nvidia</option>
+		            <option value="78">OATS-Systems</option>
+		            <option value="79">OLA-Cabs</option>
+		            <option value="80">OYORooms</option>
+		            <option value="81">One97</option>
+		            <option value="82">Open-Solutions</option>
+		            <option value="83">Opera</option>
+		            <option value="84">Oracle</option>
+		            <option value="85">Oxigen-Wallet</option>
+		            <option value="86">PayPal</option>
+		            <option value="87">Paytm</option>
+		            <option value="88">Payu</option>
+		            <option value="89">Philips</option>
+		            <option value="90">Polycom</option>
+		            <option value="91">Pubmatic</option>
+		            <option value="92">Qualcomm</option>
+		            <option value="93">Quikr</option>
+		            <option value="94">redBus</option>
+		            <option value="95">Rockstand</option>
+		            <option value="96">SAP</option>
+		            <option value="97">Samsung</option>
+		            <option value="98">Sapinet</option>
+		            <option value="99">Snapdeal</option>
+		            <option value="100">Swiggy</option>
+		            <option value="101">Synopsys</option>
+		            <option value="102">TCS</option>
+		            <option value="103">Target-Corporation</option>
+		            <option value="104">Tejas-Network</option>
+		            <option value="105">Teradata</option>
+		            <option value="106">Times-Internet</option>
+		            <option value="107">TinyOwl</option>
+		            <option value="108">Twitter</option>
+		            <option value="109">UHG</option>
+		            <option value="110">Unisys</option>
+		            <option value="111">VMWare</option>
+		            <option value="112">Visa</option>
+		            <option value="113">Walmart</option>
+		            <option value="114">Wipro</option>
+		            <option value="115">Wooker</option>
+		            <option value="116">Xome</option>
+		            <option value="117">Yahoo</option>
+		            <option value="118">Yatra-com</option>
+		            <option value="119">Yodlee-Infotech</option>
+		            <option value="120">Zillious</option>
+		            <option value="121">Zoho</option>
+		            <option value="122">Zomato</option>
+		            <option value="123">Zopper</option>
+		            <option value="124">Zycus</option>
+        		</select>
+        
+    		</div>
+    		<div id="second" class="input-field col s10 l6 m8 offset-s1 offset-l3 offset-m2" style="width: 60%;margin: auto;margin-top: 3%">
+        		<select id="category">
+		            <option value="0" disabled selected>Select Category</option>
+		            <option value="1">Internship</option>
+		            <option value="2">Placement</option>
+        		</select>
+        
+    		</div>
+    		<div id="btn" style="margin-top: 2%;">
+        		<button id="btn-tag" class="waves-effect waves-light btn-large">Search</button>
+    		</div>
+    	</main>
+        <footer>
+			<p>Developed and designed with <i class="fa fa-heart fa-1x"></i></p>
+
+		</footer>		
+
+ 
+   </body>
+</html>
+
+
