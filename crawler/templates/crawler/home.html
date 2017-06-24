@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <html>
 	<head>
-        <title> GeeksCrawler</title>
+        <title id="pdfname"> GeeksCrawler</title>
         <link href="{% static 'crawler/img/gfg.png' %}" rel="shortcut icon">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         <link href = "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
@@ -11,21 +11,38 @@
     	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <style>
                     
-           header{
+           #page-header{
               box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgb(0,0,0);
               position: fixed;
               text-align:center;
               top: 0;
               width: 90%;
-              z-index: 10005;
+              //z-index: 1005;
               color:black;
-           }  
-           select{
-               display:block;
-
-    			border: 2px solid #795548;
            }
+           
+           .entry-header h1 {
+		font-size: 210%;
+		font-weight: bolder;
+	}
+		#content-articles {
+		overflow-x: hidden;
+	}
 
+	pre {
+		font-family: inherit;
+		white-space: normal;
+		word-break: break-word;
+	}
+
+	#print-btn{
+		    z-index: 20006;
+	}
+	@media print{    
+		#first, #second, #btn, #table_articles, #join-buttons, #print-btn, #bg, #page-header, #footer *{
+			display: none !important;
+		}
+	}
            body{
            	background-image: url("{% static 'crawler/img/bg.jpg' %}");
            	  // background-color: #588c7e;
@@ -73,7 +90,7 @@
     </head>
     
     <body style="width: 90%; margin: auto;">
-    	<header>
+    	<header id="page-header">
         	<h4>Geeks For Geeks Crawler !</h4>
         </header>
                             
@@ -220,10 +237,19 @@
         		<button id="btn-tag" class="waves-effect waves-light btn-large">Search</button>
     		</div>
     	</main>
-        <footer>
+        <footer id="footer">
 			<p>Developed and designed with <i class="fa fa-heart fa-1x"></i></p>
 
-		</footer>		
+		</footer>
+		<script>
+			$(document).ready(function() {
+					$('select').material_select();
+					});
+			function onBodyLoad(){
+				crawlGeeks.init();
+				}	
+					window.addEventListener('load',onBodyLoad);
+		</script>	
 
  
    </body>
